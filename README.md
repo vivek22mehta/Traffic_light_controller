@@ -4,11 +4,17 @@ The light Controller is a digital system designed to manage traffic lights at an
 The FSM has six states (STATE1 to STATE6), each representing a specific configuration of the traffic lights. The states are defined as follows:
 
 STATE1: Main1 and Main2 have green lights, Main Turn and Side have red lights.
+
 STATE2: Main1 has a green light, Main2 has a yellow light, Main Turn and Side have red lights.
+
 STATE3: Main1 has a green light, Main2 has a red light, Main Turn has a green light, Side has a red light.
+
 STATE4: Main1 has a yellow light, Main2 has a red light, Main Turn has a yellow light, Side has a red light.
+
 STATE5: Main1 and Main2 have red lights, Main Turn has a red light, Side has a green light.
+
 STATE6: Main1 and Main2 have red lights, Main Turn has a red light, Side has a yellow light.
+
 Operations:
 On the rising edge of the clk signal or the reset signal being high, the FSM checks the current state and the value of the counter.
 The counter is used to keep track of how long the FSM has been in the current state. Each state has a predefined duration (sec_7, sec_5, sec_2, sec_3).
