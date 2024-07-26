@@ -1,0 +1,27 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module Traffic_light_controller_tb();
+reg clk, reset;
+wire [2:0] light_A,light_B,light_C,light_D;
+
+Traffic_light_controller dut(clk,reset,light_A,light_B,light_C,light_D);
+initial begin
+    clk = 1'b0;
+    forever #5 clk = ~clk;
+end
+initial begin
+    reset = 0;
+    #3;
+    reset = 1;
+    #20;
+    reset = 0;
+    #(200);
+    $finish;
+end
+
+endmodule
